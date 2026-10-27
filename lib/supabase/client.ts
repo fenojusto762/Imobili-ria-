@@ -1,7 +1,11 @@
 import { createBrowserClient } from '@supabase/ssr';
 
+let client: ReturnType<typeof createBrowserClient> | null = null;
+
+/** Instância única no navegador (evita recriar o cliente a cada renderização). */
 export function supabaseBrowser() {
-  return createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+  if (!client) client = createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!);
+  return client;
 }
 
 export function publicUrl(path: string | null | undefined) {

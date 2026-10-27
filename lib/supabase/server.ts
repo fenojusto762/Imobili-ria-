@@ -1,4 +1,4 @@
-import { createServerClient } from '@supabase/ssr';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
 /** Cliente Supabase para Server Components / rotas. Retorna null se as variáveis de ambiente não estiverem configuradas. */
@@ -12,7 +12,7 @@ export function supabaseServer() {
       getAll() {
         return store.getAll();
       },
-      setAll(list) {
+      setAll(list: { name: string; value: string; options: CookieOptions }[]) {
         try {
           list.forEach(({ name, value, options }) => store.set(name, value, options));
         } catch {
