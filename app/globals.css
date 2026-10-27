@@ -29,7 +29,7 @@ section.s{padding:64px 0}.s.alt{background:var(--gray)}
 .brand img{height:44px;width:auto}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem}.nav a:hover{color:var(--gold-d)}
-.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:1rem;cursor:pointer}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:9px 11px;line-height:0;color:var(--navy);cursor:pointer}
 @media(max-width:860px){.burger{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:16px 20px;border-bottom:1px solid var(--line);gap:14px}.nav.open{display:flex}}
 /* hero */
 .hero{position:relative;background:var(--navy) center/cover;color:#fff;padding:96px 0 120px}
