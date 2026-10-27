@@ -42,7 +42,10 @@ export default function Footer({ s }: { s: Settings }) {
             </ul>
           </div>
         </div>
-        <div className="copy">© {new Date().getFullYear()} {s.company_name}. Todos os direitos reservados.</div>
+        <div className="copy">
+          © {new Date().getFullYear()} {s.company_name}. Todos os direitos reservados.
+          {' · '}<Link href="/admin/login" rel="nofollow">Área administrativa</Link>
+        </div>
       </div>
     </footer>
   );
