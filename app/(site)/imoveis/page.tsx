@@ -33,8 +33,8 @@ export default async function Imoveis({ searchParams }: { searchParams: SP }) {
 
   return (
     <>
-      <div className="pagehead"><div className="wrap"><h1>Imóveis</h1><p className="muted" style={{ margin: 0 }}>{total} resultado{total === 1 ? '' : 's'}</p></div></div>
-      <div className="wrap" style={{ padding: '28px 20px 56px' }}>
+      <div className="pagehead"><div className="wrap"><h1>Imóveis</h1><p style={{ margin: 0 }}>{total} resultado{total === 1 ? '' : 's'}</p></div></div>
+      <div className="wrap pull" style={{ paddingBottom: 64 }}>
         <SearchForm v={f} compact />
         {error && <div className="alert bad" role="alert">{error}</div>}
         {!error && items.length === 0 && (

@@ -11,11 +11,11 @@ export default function Footer({ s }: { s: Settings }) {
       <div className="wrap">
         <div className="cols">
           <div>
-            <h3>{s.company_name}</h3>
-            {s.description && <p>{s.description}</p>}
+            <p className="big">{s.company_name}</p>
+            {s.description && <p style={{ maxWidth: '46ch' }}>{s.description}</p>}
             {s.creci && <p>CRECI: {s.creci}</p>}
             {socials.length > 0 && (
-              <ul aria-label="Redes sociais" style={{ gridAutoFlow: 'column', justifyContent: 'start', gap: 16 }}>
+              <ul aria-label="Redes sociais" style={{ gridAutoFlow: 'column', justifyContent: 'start', gap: 18 }}>
                 {socials.map(([n, u]) => <li key={n}><a href={u} target="_blank" rel="noopener noreferrer">{n}</a></li>)}
               </ul>
             )}
@@ -43,8 +43,8 @@ export default function Footer({ s }: { s: Settings }) {
           </div>
         </div>
         <div className="copy">
-          © {new Date().getFullYear()} {s.company_name}. Todos os direitos reservados.
-          {' · '}<Link href="/admin/login" rel="nofollow">Área administrativa</Link>
+          <span>© {new Date().getFullYear()} {s.company_name}. Todos os direitos reservados.</span>
+          <Link href="/admin/login" rel="nofollow">Área administrativa</Link>
         </div>
       </div>
     </footer>
